@@ -13,3 +13,18 @@ E:\ClimaLocal\ClimaLocal.Client\obj\Debug\net6.0\ClimaLocal.Client.dll
 E:\ClimaLocal\ClimaLocal.Client\obj\Debug\net6.0\refint\ClimaLocal.Client.dll
 E:\ClimaLocal\ClimaLocal.Client\obj\Debug\net6.0\ClimaLocal.Client.pdb
 E:\ClimaLocal\ClimaLocal.Client\obj\Debug\net6.0\ref\ClimaLocal.Client.dll
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.Client\bin\Debug\net6.0\ClimaLocal.Client.deps.json
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.Client\bin\Debug\net6.0\ClimaLocal.Client.dll
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.Client\bin\Debug\net6.0\ClimaLocal.Client.pdb
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.Client\bin\Debug\net6.0\ClimaLocal.Domain.dll
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.Client\bin\Debug\net6.0\ClimaLocal.Domain.pdb
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.Client\obj\Debug\net6.0\ClimaLocal.Client.csproj.AssemblyReference.cache
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.Client\obj\Debug\net6.0\ClimaLocal.Client.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.Client\obj\Debug\net6.0\ClimaLocal.Client.AssemblyInfoInputs.cache
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.Client\obj\Debug\net6.0\ClimaLocal.Client.AssemblyInfo.cs
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.Client\obj\Debug\net6.0\ClimaLocal.Client.csproj.CoreCompileInputs.cache
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.Client\obj\Debug\net6.0\ClimaLocal.Client.csproj.CopyComplete
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.Client\obj\Debug\net6.0\ClimaLocal.Client.dll
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.Client\obj\Debug\net6.0\refint\ClimaLocal.Client.dll
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.Client\obj\Debug\net6.0\ClimaLocal.Client.pdb
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.Client\obj\Debug\net6.0\ref\ClimaLocal.Client.dll

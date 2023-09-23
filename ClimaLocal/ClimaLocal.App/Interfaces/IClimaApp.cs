@@ -6,7 +6,7 @@ namespace ClimaLocal.App.Interfaces;
 
 public interface IClimaApp
 {
-    List<CidadeResponse> RetornaCidades(); 
-    PrevisaoClimaCidadeResponse RetornaClimaCidade(int id);
-    PrevisaoClimaAeroportoResponse RetornaClimaAeroporto(string icaoCode);
+    Task<List<CidadeResponse>> RetornaCidades();
+    Task<PrevisaoClimaCidadeResponse> RetornaClimaCidade(int idCidade);
+    Task<PrevisaoClimaAeroportoResponse> RetornaClimaAeroporto(string icaoCode);
 }

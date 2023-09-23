@@ -10,6 +10,11 @@ public class PrevisaoCidade : EntidadeBase
 
     public static PrevisaoCidade ToEntityPrevisaoCidade(PrevisaoClimaCidadeResponse previsaoClimaCidadeResponse)
     {
+        if (previsaoClimaCidadeResponse == null)
+        {
+            throw new ArgumentNullException(nameof(previsaoClimaCidadeResponse));
+        }
+
         var cidadeDto = new CidadeDTO
         {
             Nome = previsaoClimaCidadeResponse.Cidade,
@@ -26,6 +31,7 @@ public class PrevisaoCidade : EntidadeBase
 
         return previsaoCidade;
     }
+
 };
 
 

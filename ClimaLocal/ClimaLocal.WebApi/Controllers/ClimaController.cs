@@ -1,74 +1,98 @@
 ﻿using ClimaLocal.App.Interfaces;
 using ClimaLocal.Domain.ViewModels.Response;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ClimaLocal.WebApi.Controllers
+namespace ClimaLocal.WebApi.Controllers;
+
+/// <summary>
+/// Controlador responsável por fornecer informações climáticas relacionadas a cidades e aeroportos.
+/// </summary>
+[Route("api/[controller]")]
+[ApiController]
+public class ClimaController : ControllerBase
 {
+    private readonly IClimaApp _climaApp;
 
-    [Route("api/[controller]")]
-    [ApiController]
-    public class ClimaController : ControllerBase
+    /// <summary>
+    /// Inicializa uma nova instância do controlador ClimaController.
+    /// </summary>
+    /// <param name="climaApp">A interface de aplicação climática.</param>
+    public ClimaController(IClimaApp climaApp)
     {
-        private readonly IClimaApp _climaApp;
+        _climaApp = climaApp ?? throw new ArgumentNullException(nameof(climaApp));
+    }
 
-        public ClimaController(IClimaApp climaApp)
+    /// <summary>
+    /// Obtém uma lista de cidades com informações de código, úteis para pesquisas relacionadas ao clima da cidade.
+    /// </summary>
+    /// <returns>Uma lista de cidades com códigos.</returns>
+    [HttpGet]
+    [Route("retorna-cidades")]
+    public async Task<ActionResult<List<CidadeResponse>>> RetornaCidadesAsync()
+    {
+        try
         {
-            _climaApp = climaApp;
+            var cidades = await _climaApp.RetornaCidades();
+
+            return Ok(cidades);
         }
-
-        /// <summary>
-        /// Responsável por buscar cidades e retornar informações. Entre elas o código, importante para posterior busca relacionada ao clima da cidade.
-        /// </summary>
-        /// <returns>Uma lista de cidades</returns>
-        [HttpGet]
-        [Route("retorna-cidades")]
-        public ActionResult<List<CidadeResponse>> RetornaCidades()
+        catch (HttpRequestException ex)
         {
-            try
-            {
-                return Ok(_climaApp.RetornaCidades());
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            return StatusCode(500, $"Erro na requisição HTTP: {ex.Message}");
         }
-
-        /// <summary>
-        /// Busca o clima atual em uma determinada cidade.
-        /// </summary>
-        /// <returns>O clima de determinada cidade</returns>
-        [HttpGet]
-        [Route("retorna-clima-cidade/{codigoCidade}")]
-        public ActionResult<PrevisaoClimaCidadeResponse> RetornaClimaCidade(int codigoCidade)
+        catch (Exception ex)
         {
-            try
-            {
-                return Ok(_climaApp.RetornaClimaCidade(codigoCidade));
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            return BadRequest($"Erro ao buscar cidades: {ex.Message}");
         }
+    }
 
-        /// <summary>
-        /// Busca o clima atual em um determinado aeroporto.
-        /// </summary>
-        /// <returns>O clima de determinado aeroporto</returns>
-        [HttpGet]
-        [Route("retorna-clima-aeroporto/{codigoAeroporto}")]
-        public ActionResult<PrevisaoClimaAeroportoResponse> RetornaClimaAeroporto(string codigoAeroporto)
+    /// <summary>
+    /// Obtém informações climáticas atuais para uma cidade específica.
+    /// </summary>
+    /// <param name="codigoCidade">O código da cidade para a qual deseja obter informações climáticas.</param>
+    /// <returns>As informações climáticas da cidade especificada.</returns>
+    [HttpGet]
+    [Route("retorna-clima-cidade/{codigoCidade}")]
+    public async Task<ActionResult<PrevisaoClimaCidadeResponse>> RetornaClimaCidadeAsync(int codigoCidade)
+    {
+        try
         {
-            try
-            {
-                return Ok(_climaApp.RetornaClimaAeroporto(codigoAeroporto));
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            var climaCidade = await _climaApp.RetornaClimaCidade(codigoCidade);
+
+            return Ok(climaCidade);
+        }
+        catch (HttpRequestException ex)
+        {
+            return StatusCode(500, $"Erro na requisição HTTP: {ex.Message}");
+        }
+        catch (Exception ex)
+        {
+            return BadRequest($"Erro ao buscar clima da cidade: {ex.Message}");
+        }
+    }
+
+    /// <summary>
+    /// Obtém informações climáticas atuais para um aeroporto específico.
+    /// </summary>
+    /// <param name="codigoAeroporto">O código do aeroporto para o qual deseja obter informações climáticas.</param>
+    /// <returns>As informações climáticas do aeroporto especificado.</returns>
+    [HttpGet]
+    [Route("retorna-clima-aeroporto/{codigoAeroporto}")]
+    public async Task<ActionResult<PrevisaoClimaAeroportoResponse>> RetornaClimaAeroportoAsync(string codigoAeroporto)
+    {
+        try
+        {
+            var climaAeroporto = await _climaApp.RetornaClimaAeroporto(codigoAeroporto);
+
+            return Ok(climaAeroporto);
+        }
+        catch (HttpRequestException ex)
+        {
+            return StatusCode(500, $"Erro na requisição HTTP: {ex.Message}");
+        }
+        catch (Exception ex)
+        {
+            return BadRequest($"Erro ao buscar clima do aeroporto: {ex.Message}");
         }
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\ClimaLocal\\ClimaLocal.Domain\\ClimaLocal.Domain.csproj": {}
+    "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\ClimaTempoAPI\\ClimaLocal\\ClimaLocal.Domain\\ClimaLocal.Domain.csproj": {}
   },
   "projects": {
-    "E:\\ClimaLocal\\ClimaLocal.Domain\\ClimaLocal.Domain.csproj": {
+    "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\ClimaTempoAPI\\ClimaLocal\\ClimaLocal.Domain\\ClimaLocal.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\ClimaLocal\\ClimaLocal.Domain\\ClimaLocal.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\ClimaTempoAPI\\ClimaLocal\\ClimaLocal.Domain\\ClimaLocal.Domain.csproj",
         "projectName": "ClimaLocal.Domain",
-        "projectPath": "E:\\ClimaLocal\\ClimaLocal.Domain\\ClimaLocal.Domain.csproj",
+        "projectPath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\ClimaTempoAPI\\ClimaLocal\\ClimaLocal.Domain\\ClimaLocal.Domain.csproj",
         "packagesPath": "C:\\Users\\bruno\\.nuget\\packages\\",
-        "outputPath": "E:\\ClimaLocal\\ClimaLocal.Domain\\obj\\",
+        "outputPath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\ClimaTempoAPI\\ClimaLocal\\ClimaLocal.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

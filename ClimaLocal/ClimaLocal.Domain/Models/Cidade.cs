@@ -8,13 +8,18 @@ public class Cidade : EntidadeBase
     public string Estado { get; private set; }
     public int Codigo { get; private set; }
 
-    public static Cidade ToEntity(CidadeDTO climaDTO)
+    public static Cidade ToEntity(CidadeDTO cidadeDTO)
     {
+        if (cidadeDTO == null)
+        {
+            throw new ArgumentNullException(nameof(cidadeDTO));
+        }
+
         return new Cidade
         {
-            Nome = climaDTO.Nome,
-            Estado = climaDTO.Estado,
-            Codigo = climaDTO.Id
+            Nome = cidadeDTO.Nome,
+            Estado = cidadeDTO.Estado,
+            Codigo = cidadeDTO.Id
         };
     }
 }

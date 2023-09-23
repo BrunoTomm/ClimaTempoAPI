@@ -22,7 +22,7 @@ builder.Configuration.AddJsonFile("appsettings.json");
 
 // Acessar a string de conexão
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<ClimaContext>(options => options.UseSqlServer(connectionString));
+builder.Services.AddDbContext<ClimaContext>(options => options.UseSqlServer(connectionString), ServiceLifetime.Scoped);
 builder.Services.AddMvc();
 
 builder.Services.AddScoped<IClimaApp, ClimaApp>();
@@ -30,6 +30,8 @@ builder.Services.AddScoped<IRestClimaTempo, RestClimaTempo>();
 builder.Services.AddScoped<IPrevisaoCidadeRepository, PrevisaoCidadeRepository>();
 builder.Services.AddScoped<IPrevisaoAeroportoRepository, PrevisaoAeroportoRepository>();
 builder.Services.AddScoped<ILogRepository, LogRepository>();
+builder.Services.AddScoped(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
+
 
 builder.Services.AddLogging(builder =>
 {

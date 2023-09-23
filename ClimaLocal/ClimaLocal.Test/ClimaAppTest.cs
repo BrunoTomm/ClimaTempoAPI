@@ -37,24 +37,24 @@ public class ClimaAppTests
     }
 
     [Test]
-    public void deve_retorna_cidades()
+    public void Deve_Retornar_Cidades()
     {
         // Arrange
         var mockApiResponse = "[{\"Nome\":\"Esteio\",\"Estado\":\"Rio grande do sul\",\"Id\":4750}, {\"Nome\":\"Canoas\",\"Estado\":\"Rio Grande do Sul\",\"Id\":5045}]";
         _restClimaTempoMock.Setup(x => x.GetAsync(It.IsAny<string>())).ReturnsAsync(mockApiResponse);
 
         // Act
-        var result = _climaApp.RetornaCidades();
+        var resultTask = _climaApp.RetornaCidades(); 
 
         // Assert
-        Assert.IsNotNull(result);
-        Assert.IsInstanceOf<List<CidadeResponse>>(result);
-        Assert.AreEqual(2, result.Count);
-        // Add more assertions as needed
+        Assert.IsNotNull(resultTask.Result); 
+        Assert.IsInstanceOf<List<CidadeResponse>>(resultTask.Result);
+        Assert.AreEqual(2, resultTask.Result.Count);
     }
 
+
     [Test]
-    public void deve_retorna_clima_cidade()
+    public void Deve_Retornar_Clima_Cidade()
     {
         // Arrange
         var idCidade = 4750;
@@ -62,15 +62,15 @@ public class ClimaAppTests
         _restClimaTempoMock.Setup(x => x.GetAsync(It.IsAny<string>())).ReturnsAsync(mockApiResponse);
 
         // Act
-        var result = _climaApp.RetornaClimaCidade(idCidade);
+        var resultTask = _climaApp.RetornaClimaCidade(idCidade); 
 
         // Assert
-        Assert.IsNotNull(result);
-        Assert.IsInstanceOf<PrevisaoClimaCidadeResponse>(result);
+        Assert.IsNotNull(resultTask.Result); 
+        Assert.IsInstanceOf<PrevisaoClimaCidadeResponse>(resultTask.Result);
     }
 
     [Test]
-    public void deve_retorna_clima_aeroporto()
+    public void Deve_Retornar_Clima_Aeroporto()
     {
         // Arrange
         var icaoCode = "SBBH";
@@ -78,12 +78,12 @@ public class ClimaAppTests
         _restClimaTempoMock.Setup(x => x.GetAsync(It.IsAny<string>())).ReturnsAsync(mockApiResponse);
 
         // Act
-        var result = _climaApp.RetornaClimaAeroporto(icaoCode);
+        var resultTask = _climaApp.RetornaClimaAeroporto(icaoCode); 
 
         // Assert
-        Assert.IsNotNull(result);
-        Assert.IsInstanceOf<PrevisaoClimaAeroportoResponse>(result);
-        // Add more assertions as needed
+        Assert.IsNotNull(resultTask.Result); 
+        Assert.IsInstanceOf<PrevisaoClimaAeroportoResponse>(resultTask.Result);
     }
+
 }
 

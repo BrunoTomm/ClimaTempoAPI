@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "a2Ir7GNN4NBviJvhsBuJCvW3CIoQOPBBffTKh3EZfzraZ7nxWR614B7dkAnhkM6fTrUcGG6IkGMBa4FfoDyogw==",
+  "dgSpecHash": "tIcYJK9fH2QQJTzB3+4fOhtumo7ObQAVefoVgWmdxk44QshCIPe508mGGIR8NZeaiY7g6K1ZJGY8DuNQJhDUog==",
   "success": true,
-  "projectFilePath": "E:\\ClimaLocal\\ClimaLocal.Domain\\ClimaLocal.Domain.csproj",
+  "projectFilePath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\ClimaTempoAPI\\ClimaLocal\\ClimaLocal.Domain\\ClimaLocal.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

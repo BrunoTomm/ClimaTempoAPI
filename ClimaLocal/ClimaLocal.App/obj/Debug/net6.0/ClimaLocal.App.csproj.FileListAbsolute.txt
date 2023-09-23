@@ -17,3 +17,22 @@ E:\ClimaLocal\ClimaLocal.App\obj\Debug\net6.0\ClimaLocal.App.dll
 E:\ClimaLocal\ClimaLocal.App\obj\Debug\net6.0\refint\ClimaLocal.App.dll
 E:\ClimaLocal\ClimaLocal.App\obj\Debug\net6.0\ClimaLocal.App.pdb
 E:\ClimaLocal\ClimaLocal.App\obj\Debug\net6.0\ref\ClimaLocal.App.dll
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.App\bin\Debug\net6.0\ClimaLocal.App.deps.json
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.App\bin\Debug\net6.0\ClimaLocal.App.dll
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.App\bin\Debug\net6.0\ClimaLocal.App.pdb
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.App\bin\Debug\net6.0\ClimaLocal.Client.dll
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.App\bin\Debug\net6.0\ClimaLocal.Data.dll
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.App\bin\Debug\net6.0\ClimaLocal.Domain.dll
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.App\bin\Debug\net6.0\ClimaLocal.Client.pdb
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.App\bin\Debug\net6.0\ClimaLocal.Data.pdb
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.App\bin\Debug\net6.0\ClimaLocal.Domain.pdb
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.App\obj\Debug\net6.0\ClimaLocal.App.csproj.AssemblyReference.cache
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.App\obj\Debug\net6.0\ClimaLocal.App.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.App\obj\Debug\net6.0\ClimaLocal.App.AssemblyInfoInputs.cache
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.App\obj\Debug\net6.0\ClimaLocal.App.AssemblyInfo.cs
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.App\obj\Debug\net6.0\ClimaLocal.App.csproj.CoreCompileInputs.cache
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.App\obj\Debug\net6.0\ClimaLocal.App.csproj.CopyComplete
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.App\obj\Debug\net6.0\ClimaLocal.App.dll
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.App\obj\Debug\net6.0\refint\ClimaLocal.App.dll
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.App\obj\Debug\net6.0\ClimaLocal.App.pdb
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.App\obj\Debug\net6.0\ref\ClimaLocal.App.dll

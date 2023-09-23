@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rUGj1FqMgo1qIzZk7DJ3FNBQimYN1quxtneleZpXqIejEMQc8asBo0Kk8tn2coysXeyoBRDHV9hmCHcnUrkYRg==",
+  "dgSpecHash": "uCIRn4XyLGiP5fppbjNrUAhZpmL2AH7++HeGCGRXRsp0k2a1OTN+PkD0B/ldLpFjY9OGygYo0GHtBa/nOuAk6w==",
   "success": true,
-  "projectFilePath": "E:\\ClimaLocal\\ClimaLocal.Data\\ClimaLocal.Data.csproj",
+  "projectFilePath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\ClimaTempoAPI\\ClimaLocal\\ClimaLocal.Data\\ClimaLocal.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bruno\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\bruno\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

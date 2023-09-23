@@ -10,3 +10,15 @@ E:\ClimaLocal\ClimaLocal.Domain\obj\Debug\net6.0\ClimaLocal.Domain.dll
 E:\ClimaLocal\ClimaLocal.Domain\obj\Debug\net6.0\refint\ClimaLocal.Domain.dll
 E:\ClimaLocal\ClimaLocal.Domain\obj\Debug\net6.0\ClimaLocal.Domain.pdb
 E:\ClimaLocal\ClimaLocal.Domain\obj\Debug\net6.0\ref\ClimaLocal.Domain.dll
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.Domain\bin\Debug\net6.0\ClimaLocal.Domain.deps.json
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.Domain\bin\Debug\net6.0\ClimaLocal.Domain.dll
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.Domain\bin\Debug\net6.0\ClimaLocal.Domain.pdb
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.Domain\obj\Debug\net6.0\ClimaLocal.Domain.csproj.AssemblyReference.cache
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.Domain\obj\Debug\net6.0\ClimaLocal.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.Domain\obj\Debug\net6.0\ClimaLocal.Domain.AssemblyInfoInputs.cache
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.Domain\obj\Debug\net6.0\ClimaLocal.Domain.AssemblyInfo.cs
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.Domain\obj\Debug\net6.0\ClimaLocal.Domain.csproj.CoreCompileInputs.cache
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.Domain\obj\Debug\net6.0\ClimaLocal.Domain.dll
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.Domain\obj\Debug\net6.0\refint\ClimaLocal.Domain.dll
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.Domain\obj\Debug\net6.0\ClimaLocal.Domain.pdb
+C:\Users\bruno\OneDrive\Área de Trabalho\ClimaTempoAPI\ClimaLocal\ClimaLocal.Domain\obj\Debug\net6.0\ref\ClimaLocal.Domain.dll

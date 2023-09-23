@@ -10,6 +10,8 @@ A API ClimaTempo permite verificar o clima em determinadas cidades ou aeroportos
 
 3. Na pasta raiz do projeto, você encontrará um arquivo chamado `Build.bat`. Execute este arquivo para iniciar o Docker e provisionar a imagem necessária. Após a conclusão deste processo, a API estará totalmente operacional.
 
+4. Agora basta acessar http://localhost:8000/swagger/index.html
+
 ## Uso da API
 
 Após configurar a API, você pode começar a usá-la para obter informações climáticas. Aqui estão os endpoints disponíveis:
@@ -19,6 +21,7 @@ Após configurar a API, você pode começar a usá-la para obter informações c
 2. `/api/Clima/retorna-clima-cidade`: Use este endpoint para buscar informações climáticas de uma cidade específica, informando seu código.
 
 3. `/api/Clima/retorna-clima-aeroporto`: Este endpoint permite buscar informações climáticas de um aeroporto específico, fornecendo seu código. Você pode encontrar uma lista de códigos ICAO de aeroportos [aqui](https://pt.wikipedia.org/wiki/Lista_de_aeroportos_do_Brasil_por_c%C3%B3digo_aeroportu%C3%A1rio_ICAO).
+
 
 Exemplo de uso para teste: `/api/Clima/retorna-clima-aeroporto?codigoAeroporto=SBBH`.
 

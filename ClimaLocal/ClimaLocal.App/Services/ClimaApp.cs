@@ -24,49 +24,62 @@ public class ClimaApp : IClimaApp
         ILogger<ClimaApp> logger,
         ILogRepository logRepository)
     {
-        _previsaoCidadeRepository = previsaoCidadeRepository;
-        _restClimaTempo = restClimaTempo;
-        _previsaoAeroportoRepository = previsaoAeroportoRepository;
-        _logger = logger;
-        _logRepository = logRepository;
+        _previsaoCidadeRepository = previsaoCidadeRepository ?? throw new ArgumentNullException(nameof(previsaoCidadeRepository));
+        _restClimaTempo = restClimaTempo ?? throw new ArgumentNullException(nameof(restClimaTempo));
+        _previsaoAeroportoRepository = previsaoAeroportoRepository ?? throw new ArgumentNullException(nameof(previsaoAeroportoRepository));
+        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+        _logRepository = logRepository ?? throw new ArgumentNullException(nameof(logRepository));
     }
 
-    public List<CidadeResponse> RetornaCidades()
+    public async Task<List<CidadeResponse>> RetornaCidades()
     {
-        _logger.LogInformation("Inicio da busca pelas cidades.");
+        _logger.LogInformation("Início da busca pelas cidades.");
 
         var url = "https://brasilapi.com.br/api/cptec/v1/cidade";
 
-        var retorno = _restClimaTempo.GetAsync(url).Result;
-
-        var retornoDeserialize = JsonConvert.DeserializeObject<List<CidadeDTO>>(retorno);
-
-        var cidadeResponse = new List<CidadeResponse>();
-
-        foreach (var cidadeDTO in retornoDeserialize)
-        {
-            cidadeResponse.Add(new CidadeResponse
-            {
-                Nome = cidadeDTO.Nome,
-                Estado = cidadeDTO.Estado,
-                CodigoCidade = cidadeDTO.Id,
-            });
-        }
-
-        _logger.LogInformation("Fim da busca pelas cidades.");
-
-        return cidadeResponse;
-    }
-
-    public PrevisaoClimaCidadeResponse RetornaClimaCidade(int idCidade)
-    {
         try
         {
-            _logger.LogInformation($"Inicio da busca pelo clima da cidade com ID = {idCidade}.");
-
-            var url = $"https://brasilapi.com.br/api/cptec/v1/clima/previsao/{idCidade}";
-
             var retorno = _restClimaTempo.GetAsync(url).Result;
+            var retornoDeserialize = JsonConvert.DeserializeObject<List<CidadeDTO>>(retorno);
+
+            var cidadeResponse = new List<CidadeResponse>();
+
+            foreach (var cidadeDTO in retornoDeserialize)
+            {
+                cidadeResponse.Add(new CidadeResponse
+                {
+                    Nome = cidadeDTO.Nome,
+                    Estado = cidadeDTO.Estado,
+                    CodigoCidade = cidadeDTO.Id,
+                });
+            }
+
+            _logger.LogInformation("Fim da busca pelas cidades.");
+
+            return cidadeResponse;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Erro ao buscar cidades.");
+
+            await RegistrarLogNoBanco(ex, true, "");
+
+            throw new Exception($"Ocorreu um erro ao buscar cidades. {ex.Message}");
+        }
+    }
+
+    public async Task<PrevisaoClimaCidadeResponse> RetornaClimaCidade(int idCidade)
+    {
+        _logger.LogInformation($"Início da busca pelo clima da cidade com ID = {idCidade}.");
+
+        var url = $"https://brasilapi.com.br/api/cptec/v1/clima/previsao/{idCidade}";
+
+        try
+        {
+            var retorno = _restClimaTempo.GetAsync(url).Result;
+
+            if (retorno.Contains("Erro"))
+                throw new Exception("A Cidade não consta na API.");
 
             var retornoDeserialize = JsonConvert.DeserializeObject<PrevisaoClimaCidadeDTO>(retorno);
 
@@ -77,12 +90,12 @@ public class ClimaApp : IClimaApp
                 AtualizadoEm = retornoDeserialize.atualizado_em,
             };
 
-            climaCidadeResponse.Clima = ToEntityClima(retornoDeserialize.clima.FirstOrDefault());
+            climaCidadeResponse.Clima = ToEntityClima(retornoDeserialize.clima?.FirstOrDefault());
 
-            var entidadePrevisaCidade = PrevisaoCidade.ToEntityPrevisaoCidade(climaCidadeResponse);
+            var entidadePrevisaoCidade = PrevisaoCidade.ToEntityPrevisaoCidade(climaCidadeResponse);
 
-            if (entidadePrevisaCidade != null)
-                _previsaoCidadeRepository.Adicionar(entidadePrevisaCidade);
+            if (entidadePrevisaoCidade != null)
+                _previsaoCidadeRepository.Adicionar(entidadePrevisaoCidade);
 
             _logger.LogInformation($"Fim da busca pelo clima da cidade com ID = {idCidade}.");
 
@@ -90,34 +103,31 @@ public class ClimaApp : IClimaApp
         }
         catch (Exception ex)
         {
-            _logRepository.Adicionar(new Log
-            {
-                Timestamp = DateTimeOffset.Now,
-                Level = "Error",
-                Message = $"Ocorreu um erro durante a execução da cidade com ID = {idCidade}. ",
-            });
+            _logger.LogError(ex, $"Erro ao buscar clima da cidade com ID = {idCidade}.");
 
-            throw new Exception("Ocorreu um erro durante a execução da cidade com ID = " + idCidade);
+            await RegistrarLogNoBanco(
+                ex,
+                isCidade: true,
+                identificacao: idCidade.ToString());
+
+            throw new Exception($"Ocorreu um erro ao buscar o clima da cidade com ID = {idCidade}. {ex.Message}");
         }
-
     }
 
-    public PrevisaoClimaAeroportoResponse RetornaClimaAeroporto(string icaoCode)
+    public async Task<PrevisaoClimaAeroportoResponse> RetornaClimaAeroporto(string icaoCode)
     {
+        _logger.LogInformation($"Início da busca pelo clima do aeroporto com icaoCode = {icaoCode}.");
+
+        var url = $"https://brasilapi.com.br/api/cptec/v1/clima/aeroporto/{icaoCode}";
+
         try
         {
-            _logger.LogInformation($"Inicio da busca pelo clima do aeroporto com icaoCode = {icaoCode}.");
-
-            var url = $"https://brasilapi.com.br/api/cptec/v1/clima/aeroporto/{icaoCode}";
-
             var retorno = _restClimaTempo.GetAsync(url).Result;
 
-            var retornoDeserialize = new PrevisaoClimaAeroportoDTO();
-
-            if (!retorno.Contains("undefined"))
-                retornoDeserialize = JsonConvert.DeserializeObject<PrevisaoClimaAeroportoDTO>(retorno);
-            else
+            if (retorno.Contains("undefined") || retorno.Contains("Erro"))
                 throw new Exception("O Aeroporto não consta na API.");
+
+            var retornoDeserialize = JsonConvert.DeserializeObject<PrevisaoClimaAeroportoDTO>(retorno);
 
             var climaAeroportoResponse = new PrevisaoClimaAeroportoResponse
             {
@@ -138,36 +148,46 @@ public class ClimaApp : IClimaApp
 
             climaAeroportoResponse.Clima = ToEntityClima(climaDTO);
 
-            var entidadePrevisaCidade = PrevisaoAeroporto.ToEntityPrevisaoAeroporto(climaAeroportoResponse, retornoDeserialize.codigo_icao);
+            var entidadePrevisaoAeroporto = PrevisaoAeroporto.ToEntityPrevisaoAeroporto(climaAeroportoResponse, retornoDeserialize.codigo_icao);
 
-            if (entidadePrevisaCidade != null)
-                _previsaoAeroportoRepository.Adicionar(entidadePrevisaCidade);
+            if (entidadePrevisaoAeroporto != null)
+                _previsaoAeroportoRepository.Adicionar(entidadePrevisaoAeroporto);
 
-            _logger.LogInformation($"Inicio da busca pelo clima do aeroporto com icaoCode = {icaoCode}.");
+            _logger.LogInformation($"Fim da busca pelo clima do aeroporto com icaoCode = {icaoCode}.");
 
             return climaAeroportoResponse;
         }
         catch (Exception ex)
         {
-            _logRepository.Adicionar(new Log
-            {
-                Timestamp = DateTimeOffset.Now,
-                Level = "Error",
-                Message = $"Ocorreu um erro durante a execução do aeroporto com icaoCode = {icaoCode}. ",
-            });
+            _logger.LogError(ex, $"Erro ao buscar clima do aeroporto com icaoCode = {icaoCode}.");
 
-            throw new Exception($"Ocorreu um erro durante a execução do aeroporto com icaoCode = {icaoCode}");
+            await RegistrarLogNoBanco(ex,
+                isCidade: false,
+                identificacao: icaoCode);
+
+            throw new Exception($"Ocorreu um erro ao buscar o clima do aeroporto com icaoCode = {icaoCode}. {ex.Message}");
         }
-
     }
 
-    protected Clima ToEntityClima(ClimaDTO ClimaDTO)
+    private Clima ToEntityClima(ClimaDTO climaDTO)
     {
-        var climaItem = new Clima();
-
-        climaItem = Clima.ToEntity(ClimaDTO);
-
-        return climaItem;
+        return Clima.ToEntity(climaDTO);
     }
 
+    private async Task RegistrarLogNoBanco(Exception exception, bool isCidade, string identificacao)
+    {
+        var log = new Log
+        {
+            Timestamp = DateTimeOffset.Now,
+            Level = "Error",
+            Message = exception.Message,
+        };
+
+        if (isCidade)
+            log.Message += $" (Erro ao buscar cidade com código = {identificacao})";
+        else
+            log.Message += $" (Erro ao buscar aeroporto com código = {identificacao})";
+
+        _logRepository.Adicionar(log);
+    }
 }

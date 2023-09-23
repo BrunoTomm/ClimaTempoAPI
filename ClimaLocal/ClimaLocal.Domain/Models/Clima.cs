@@ -20,6 +20,11 @@ public class Clima : EntidadeBase
 
     public static Clima ToEntity(ClimaDTO climaDTO)
     {
+        if (climaDTO == null)
+        {
+            throw new ArgumentNullException(nameof(climaDTO));
+        }
+
         return new Clima
         {
             Data = climaDTO.data,
@@ -36,6 +41,5 @@ public class Clima : EntidadeBase
             Umidade = climaDTO.umidade,
         };
     }
-
 }
 

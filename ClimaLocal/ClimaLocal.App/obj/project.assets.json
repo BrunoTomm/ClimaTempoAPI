@@ -2774,11 +2774,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\ClimaLocal\\ClimaLocal.App\\ClimaLocal.App.csproj",
+      "projectUniqueName": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\ClimaTempoAPI\\ClimaLocal\\ClimaLocal.App\\ClimaLocal.App.csproj",
       "projectName": "ClimaLocal.App",
-      "projectPath": "E:\\ClimaLocal\\ClimaLocal.App\\ClimaLocal.App.csproj",
+      "projectPath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\ClimaTempoAPI\\ClimaLocal\\ClimaLocal.App\\ClimaLocal.App.csproj",
       "packagesPath": "C:\\Users\\bruno\\.nuget\\packages\\",
-      "outputPath": "E:\\ClimaLocal\\ClimaLocal.App\\obj\\",
+      "outputPath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\ClimaTempoAPI\\ClimaLocal\\ClimaLocal.App\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2799,11 +2799,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "E:\\ClimaLocal\\ClimaLocal.Client\\ClimaLocal.Client.csproj": {
-              "projectPath": "E:\\ClimaLocal\\ClimaLocal.Client\\ClimaLocal.Client.csproj"
+            "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\ClimaTempoAPI\\ClimaLocal\\ClimaLocal.Client\\ClimaLocal.Client.csproj": {
+              "projectPath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\ClimaTempoAPI\\ClimaLocal\\ClimaLocal.Client\\ClimaLocal.Client.csproj"
             },
-            "E:\\ClimaLocal\\ClimaLocal.Data\\ClimaLocal.Data.csproj": {
-              "projectPath": "E:\\ClimaLocal\\ClimaLocal.Data\\ClimaLocal.Data.csproj"
+            "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\ClimaTempoAPI\\ClimaLocal\\ClimaLocal.Data\\ClimaLocal.Data.csproj": {
+              "projectPath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\ClimaTempoAPI\\ClimaLocal\\ClimaLocal.Data\\ClimaLocal.Data.csproj"
             }
           }
         }

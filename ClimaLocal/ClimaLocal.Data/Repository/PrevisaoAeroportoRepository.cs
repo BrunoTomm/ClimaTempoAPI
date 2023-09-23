@@ -3,24 +3,9 @@ using ClimaLocal.Domain.Models;
 
 namespace ClimaLocal.Data.Repository;
 
-public class PrevisaoAeroportoRepository : IPrevisaoAeroportoRepository
+public class PrevisaoAeroportoRepository : RepositoryBase<PrevisaoAeroporto>, IPrevisaoAeroportoRepository
 {
-    private readonly ClimaContext _context;
-
-    public PrevisaoAeroportoRepository(ClimaContext context)
+    public PrevisaoAeroportoRepository(ClimaContext context) : base(context)
     {
-        _context = context;
     }
-
-    public void Adicionar(PrevisaoAeroporto entity)
-    {
-        if (entity == null)
-        {
-            throw new ArgumentNullException(nameof(entity));
-        }
-
-        _context.Set<PrevisaoAeroporto>().Add(entity);
-        _context.SaveChanges();
-    }
-
 }

@@ -4309,11 +4309,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\ClimaLocal\\ClimaLocal.WebApi\\ClimaLocal.WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\ClimaTempoAPI\\ClimaLocal\\ClimaLocal.WebApi\\ClimaLocal.WebApi.csproj",
       "projectName": "ClimaLocal.WebApi",
-      "projectPath": "E:\\ClimaLocal\\ClimaLocal.WebApi\\ClimaLocal.WebApi.csproj",
+      "projectPath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\ClimaTempoAPI\\ClimaLocal\\ClimaLocal.WebApi\\ClimaLocal.WebApi.csproj",
       "packagesPath": "C:\\Users\\bruno\\.nuget\\packages\\",
-      "outputPath": "E:\\ClimaLocal\\ClimaLocal.WebApi\\obj\\",
+      "outputPath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\ClimaTempoAPI\\ClimaLocal\\ClimaLocal.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -4334,14 +4334,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "E:\\ClimaLocal\\ClimaLocal.App\\ClimaLocal.App.csproj": {
-              "projectPath": "E:\\ClimaLocal\\ClimaLocal.App\\ClimaLocal.App.csproj"
+            "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\ClimaTempoAPI\\ClimaLocal\\ClimaLocal.App\\ClimaLocal.App.csproj": {
+              "projectPath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\ClimaTempoAPI\\ClimaLocal\\ClimaLocal.App\\ClimaLocal.App.csproj"
             },
-            "E:\\ClimaLocal\\ClimaLocal.Data\\ClimaLocal.Data.csproj": {
-              "projectPath": "E:\\ClimaLocal\\ClimaLocal.Data\\ClimaLocal.Data.csproj"
+            "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\ClimaTempoAPI\\ClimaLocal\\ClimaLocal.Data\\ClimaLocal.Data.csproj": {
+              "projectPath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\ClimaTempoAPI\\ClimaLocal\\ClimaLocal.Data\\ClimaLocal.Data.csproj"
             },
-            "E:\\ClimaLocal\\ClimaLocal.Test\\ClimaLocal.Test.csproj": {
-              "projectPath": "E:\\ClimaLocal\\ClimaLocal.Test\\ClimaLocal.Test.csproj"
+            "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\ClimaTempoAPI\\ClimaLocal\\ClimaLocal.Test\\ClimaLocal.Test.csproj": {
+              "projectPath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\ClimaTempoAPI\\ClimaLocal\\ClimaLocal.Test\\ClimaLocal.Test.csproj"
             }
           }
         }
