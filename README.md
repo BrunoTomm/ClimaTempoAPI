@@ -6,7 +6,7 @@ A API ClimaTempo permite verificar o clima em determinadas cidades ou aeroportos
 
 1. Modifique a conexão do servidor no arquivo `appsettings.json` localizado em `ClimaLocal\ClimaLocal.WebApi\appsettings.json` para apontar para seu próprio servidor do SQL Server. Importante destacar que por ser um container docker ao testar local, é necessário colocar como servidor IP.
 
-2. Para criar as tabelas no banco de dados, execute as migrações do Entity Framework. Abra o Terminal no Visual Studio (Ferramentas > Gerenciador de Pacotes do NuGet > Console do Gerenciador de Pacotes) e execute o comando `Update-Database` após configurar a conexão. Isso criará as tabelas no seu banco de dados.
+2. Para criar as tabelas no banco de dados, execute as migrations do Entity Framework. Abra o Terminal no Visual Studio (Ferramentas > Gerenciador de Pacotes do NuGet > Console do Gerenciador de Pacotes) e execute o comando `Update-Database` após configurar a conexão. Isso criará as tabelas no seu banco de dados.
 
 3. Na pasta raiz do projeto, você encontrará um arquivo chamado `Build.bat`. Execute este arquivo para iniciar o Docker e provisionar a imagem necessária. Após a conclusão deste processo, a API estará totalmente operacional.
 
