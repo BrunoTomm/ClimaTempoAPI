@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "hUB7BYBgOXpXTGC8/4acGPqNxMnWxb4OqtXM1wPsnys=",
+  "Source": "ClimaLocal.WebApi",
+  "BasePath": "_content/ClimaLocal.WebApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

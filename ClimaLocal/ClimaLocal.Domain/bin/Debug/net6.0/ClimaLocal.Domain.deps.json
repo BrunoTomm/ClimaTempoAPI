@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "ClimaLocal.Domain/1.0.0": {
+        "runtime": {
+          "ClimaLocal.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ClimaLocal.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

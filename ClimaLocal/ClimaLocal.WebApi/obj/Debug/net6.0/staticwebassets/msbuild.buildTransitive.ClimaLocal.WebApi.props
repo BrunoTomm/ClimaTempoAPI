@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\ClimaLocal.WebApi.props" />
+</Project>
