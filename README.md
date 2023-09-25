@@ -16,14 +16,15 @@ A API ClimaTempo permite verificar o clima em determinadas cidades ou aeroportos
 
 Após configurar a API, você pode começar a usá-la para obter informações climáticas. Aqui estão os endpoints disponíveis:
 
-1. `/api/Clima/retorna-cidades`: Este endpoint retorna as cidades disponíveis e seus respectivos códigos. Isso pode ser útil para obter o código da cidade que você deseja usar nos próximos endpoints. (Ele não foi solicitado, mas entendi que seria importante para obtenção do código do cliente)
+1. `/api/Clima/retorna-cidades`: Este endpoint retorna as cidades disponíveis e seus respectivos códigos. Isso pode ser útil para obter o código da cidade que você deseja usar nos próximos endpoints. (Ele não foi solicitado, mas entendi que seria importante para obtenção do código da cidade)
 
 2. `/api/Clima/retorna-clima-cidade`: Use este endpoint para buscar informações climáticas de uma cidade específica, informando seu código.
 
-3. `/api/Clima/retorna-clima-aeroporto`: Este endpoint permite buscar informações climáticas de um aeroporto específico, fornecendo seu código. Você pode encontrar uma lista de códigos ICAO de aeroportos [aqui](https://pt.wikipedia.org/wiki/Lista_de_aeroportos_do_Brasil_por_c%C3%B3digo_aeroportu%C3%A1rio_ICAO).
+3. `/api/Clima/retorna-clima-aeroporto`: Este endpoint permite buscar informações climáticas de um aeroporto específico, fornecendo seu código. Você pode encontrar uma lista de códigos ICAO de aeroportos [aqui](https://pt.wikipedia.org/wiki/Lista_de_aeroportos_do_Brasil_por_c%C3%B3digo_aeroportu%C3%A1rio_ICAO).<br>
 
 
-Exemplo de uso para teste: `/api/Clima/retorna-clima-aeroporto?codigoAeroporto=SBBH`.
+Obs: Nem todos os códigos estão cobertos pela API, por isso segue um exemplo de uso, de um código ICAO funcional:<br>
+Exemplo de uso para teste: `codigoAeroporto=SBBH`.
 
 ## Observações Importantes
 
